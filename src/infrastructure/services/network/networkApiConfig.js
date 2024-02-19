@@ -1,7 +1,6 @@
 import axios from "axios";
 
 function getDevEvironment() {
-    return "https://devproactservices.azurewebsites.net/api";
 }
 
 function getProdEnvironment() {
