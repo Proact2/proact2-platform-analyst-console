@@ -1,6 +1,7 @@
 import axios from "axios";
 
 function getDevEvironment() {
+    return "https://devetproactservices.azurewebsites.net/api";
 }
 
 function getProdEnvironment() {
@@ -8,7 +9,7 @@ function getProdEnvironment() {
 }
 
 export function setupApiConfiguration(languageTag) {
-    var environmentBaseUrl = getProdEnvironment();
+    var environmentBaseUrl = process.env.REACT_APP_APIENDPOINT;
     axios.defaults.baseURL = `${environmentBaseUrl}/${languageTag}/`;
 }
 
