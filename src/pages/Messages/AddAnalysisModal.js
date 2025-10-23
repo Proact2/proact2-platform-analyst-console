@@ -93,8 +93,8 @@ export const AddAnalysisModal = ({ props, isOpen, closeCallback, addAnalysisSucc
     function addNewAnalysis() {
         const request = prepareRequestBody();
         console.log(request);
-        ValidateRequest(request);
-        if (!isValidationErrorVisible) {
+        var isValid = ValidateRequest(request);
+        if (isValid) {
             postMessageAnalysisApi(request, addAnalysisSuccessHandler, apiErrorToast);
         }
     }
@@ -108,6 +108,7 @@ export const AddAnalysisModal = ({ props, isOpen, closeCallback, addAnalysisSucc
 
     function ValidateRequest(request) {
         setValidationErrorVisible(request.analysisResults.length == 0);
+        return request.analysisResults.length > 0;
     }
 
     function closeModalHandler() {

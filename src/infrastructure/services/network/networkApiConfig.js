@@ -4,11 +4,10 @@ function getDevEvironment() {
 }
 
 function getProdEnvironment() {
-    return "https://prodproactservices.azurewebsites.net/api";
 }
 
 export function setupApiConfiguration(languageTag) {
-    var environmentBaseUrl = getProdEnvironment();
+    var environmentBaseUrl = process.env.REACT_APP_APIENDPOINT;
     axios.defaults.baseURL = `${environmentBaseUrl}/${languageTag}/`;
 }
 
