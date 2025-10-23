@@ -113,6 +113,7 @@ export const AddAnalysisModal = ({ props, isOpen, closeCallback, addAnalysisSucc
 
     function closeModalHandler() {
         setSelectedLabelsMap(new Map());
+        setValidationErrorVisible(false);
         closeCallback();
     }
 
