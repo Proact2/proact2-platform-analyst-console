@@ -9,7 +9,7 @@ import { apiErrorToast } from "../../components/Common/apiErrorToast";
 import { SingleSelect, MultipleSelect } from "../../components/Common/Select";
 import { ErrorMessageAlert } from "../../components/Common/MessageAlert";
 import postMessageAnalysisApi from "../../infrastructure/services/network/apiCalls/postMessageAnalysisApi";
-import { success } from "toastr";
+
 
 function GroupLexiconCategoryLabels(labels) {
 
